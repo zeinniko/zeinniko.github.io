@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeinniko | Kamus HTML</title>
+    <style>
+        body{
+            background-color: #b30f27;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+        }
+
+        section{
+            background-color: #e7e2df;
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 50px;
+        }
+
+        h1{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        h3{
+            font-style: italic;
+            font-weight: bold;
+            text-align: end;
+            font-size: 20px;
+            font-family: monospace;
+        }
+
+        dd{
+            text-align: justify;
+            background-color: white;
+            padding: 17px;
+            font-family: 'Cambria';
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <h1>RESEP HTML DASAR</h1>
+        </div>
+        <div>
+            <div>
+                <h3>
+                    HTML Dasar</h3>
+                <dl>
+                    <dt><code>&lt;!DOCTYPE&gt;</code></dt>
+                    <dd>Mendefinisikan informasi tipe dokumen</dd>
+                    <dt><code>&lt;html&gt;</code></dt>
+                    <dd>Mendefinisikan root dari suatu dokumen HTML</dd>
+                    <dt><code>&lt;head&gt;</code></dt>
+                    <dd>Digunakan untuk memberikan informasi tentang dokumen tersebut</dd>
+                    <dt><code>&lt;title&gt;</code></dt>
+                    <dd>Membuat judul untuk dokumen HTML</dd>
+                    <dt><code>&lt;body&gt;</code></dt>
+                    <dd>Mendefinisikan body/isi dokumen HTML, berfungsi untuk menentukan bagaimana isi suatu dokumen
+                        ditampilkan di web browsernya. Isi dokumen tersebut dapat berupa teks, gambar, animas, link dan
+                        seterusnya</dd>
+                    <dt><code>&lt;h1&gt; to &lt;h6&gt;</code></dt>
+                    <dd>Digunakan untuk menunjukkan awal dari suatu header/judul dari dokumen HTML tersebut.</dd>
+                    <dt><code>&lt;p&gt;</code></dt>
+                    <dd>Membuat sebuah paragraf</dd>
+                    <dt><code>&lt;br /&gt;</code></dt>
+                    <dd>Memberi baris baru/pindah baris</dd>
+                    <dt><code>&lt;hr /&gt;</code></dt>
+                    <dd>Membuat garis horisontal</dd>
+                    <dt><code>&lt;!-- ... --&gt;</code></dt>
+                    <dd>Digunakan untuk memberi sebuah komentar atau keterangan. Kalimat yang terletak pada kontiner ini
+                        tidak akan terlihat pada browser</dd>
+                </dl>
+                <br />
+                <h3>
+                    Pemformatan</h3>
+                <dl>
+                    <dt><code>&lt;abbr&gt;</code></dt>
+                    <dd>Digunakan untuk menguraikan satu ungkapan yang disingkat dan Anda dapat memberikan informasi
+                        bermanfaat kepada penelusur-penulusur page source(halaman sumber kode) / pembaca layar, sistem
+                        terjemahan dan mesin pencari yang berasal dari singkatan yang sudah diuraikan, tetapi saat di
+                        browser uraian tersebut tidak akan tampil dan hanya sebagai informasi saja</dd>
+                    <dt><code>&lt;acronym&gt;</code></dt>
+                    <dd>Mendefinisikan akronim / fungsi tag ini kurang lebih sama dengan tag &lt;abbr&gt;</dd>
+                    <dt><code>&lt;address&gt;</code></dt>
+                    <dd>Mendefinisikan informasi kontak untuk penulis/pemilik dokumen</dd>
+                    <dt><code>&lt;b&gt;</code></dt>
+                    <dd>Membuat teks tebal</dd>
+                    <dt><code>&lt;bdi&gt;</code></dt>
+                    <dd>Mengisolasi bagian teks yang mungkin diformat dalam arah yang berbeda dari teks lain di luarnya
+                    </dd>
+                    <dt><code>&lt;bdo&gt;</code></dt>
+                    <dd>Digunakan untuk menimpa arah teks</dd>
+                    <dt><code>&lt;big&gt;</code></dt>
+                    <dd>Memperbesar ukuran teks sebesar satu point dari defaultnya</dd>
+                    <dt><code>&lt;blink&gt;</code></dt>
+                    <dd>Membuat teks berkedip</dd>
+                    <dt><code>&lt;blockquote&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah kutipan panjang. Pada saat di browser teks akan tampil menjorok kedalam
+                    </dd>
+                    <dt><code>&lt;cite&gt;</code></dt>
+                    <dd>Mendefinisikan kutipan</dd>
+                    <dt><code>&lt;code&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah bagian dari kode komputer</dd>
+                    <dt><code>&lt;del&gt;</code></dt>
+                    <dd>Untuk memberi garis tengah pada teks/mencoret teks</dd>
+                    <dt><code>&lt;dfn&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah istilah definisi</dd>
+                    <dt><code>&lt;em&gt;</code></dt>
+                    <dd>Membuat teks miring. Fungsi tag ini sama dengan tag &lt;i&gt; tetapi tag &lt;em&gt; yang lebih
+                        dianjurkan/ditekankan pada penggunaan untuk teks miring</dd>
+                    <dt><code>&lt;i&gt;</code></dt>
+                    <dd>Membuat teks miring</dd>
+                    <dt><code>&lt;ins&gt;</code></dt>
+                    <dd>Membuat teks bergaris bawah</dd>
+                    <dt><code>&lt;kbd&gt;</code></dt>
+                    <dd>Mendefinisikan teks yang di input dari keyboard</dd>
+                    <dt><code>&lt;mark&gt;</code></dt>
+                    <dd>Mendefinisikan teks yang ditandai/disorot</dd>
+                    <dt><code>&lt;marquee&gt;</code></dt>
+                    <dd>Membuat teks berjalan secara vertikal atau horisontal</dd>
+                    <dt><code>&lt;meter&gt;</code></dt>
+                    <dd>Menentukan pengukuran skalar dalam rentang yang diketahui (pengukur / gauge)</dd>
+                    <dt><code>&lt;pre&gt;</code></dt>
+                    <dd>Membuat teks dengan ukuran huruf yang sama</dd>
+                    <dt><code>&lt;q&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah kutipan singkat</dd>
+                    <dt><code>&lt;s&gt;</code></dt>
+                    <dd>Untuk memberi garis tengah pada teks/mencoret teks, fungsi tag ini sama dengan tag &lt;del&gt;
+                        tetapi tag &lt;s&gt; tidak dianjurkan sebagai gantinya menggunakan tag &lt;del&gt;</dd>
+                    <dt><code>&lt;samp&gt;</code></dt>
+                    <dd>Mendefinisikan contoh keluaran dari program komputer</dd>
+                    <dt><code>&lt;small&gt;</code></dt>
+                    <dd>Memperkecil ukuran teks dari ukuran defaultnya </dd>
+                    <dt><code>&lt;strike&gt;</code></dt>
+                    <dd>Untuk memberi garis tengah pada teks/mencoret teks, fungsi tag ini sama dengan tag &lt;del&gt;
+                    </dd>
+                    <dt><code>&lt;strong&gt;</code></dt>
+                    <dd>Membuat teks tebal, fungsi tag ini sama dengan tag &lt;b&gt;</dd>
+                    <dt><code>&lt;sub&gt;</code></dt>
+                    <dd>Memberikan efek subscript pada teks</dd>
+                    <dt><code>&lt;sup&gt;</code></dt>
+                    <dd>Memberikan efek superscript pada teks</dd>
+                    <dt><code>&lt;time&gt;</code></dt>
+                    <dd>Menentukan tanggal / waktu</dd>
+                    <dt><code>&lt;u&gt;</code></dt>
+                    <dd>Membuat teks bergaris bawah, fungsi tag ini sama dengan tag &lt;ins&gt; tetapi tag &lt;u&gt;
+                        tidak dianjurkan untuk kategori HTML text formatting melainkan termasuk kategori HTML Style</dd>
+                    <dt><code>&lt;var&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah variabel</dd>
+                    <dt><code>&lt;wbr&gt;</code></dt>
+                    <dd>Mendefinisikan kemungkinan baris baru</dd>
+                </dl>
+                <br />
+                <h3>
+                    Formulir dan input</h3>
+                <dl>
+                    <dt><code>&lt;form&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah form HTML untuk input form</dd>
+                    <dt><code>&lt;input /&gt;</code></dt>
+                    <dd>Mendefinisikan input field pada form</dd>
+                    <dt><code>&lt;textarea&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah kontrol input multiline</dd>
+                    <dt><code>&lt;button&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah tombol diklik</dd>
+                    <dt><code>&lt;select&gt;</code></dt>
+                    <dd>Membuat daftar drop-down</dd>
+                    <dt><code>&lt;optgroup&gt;</code></dt>
+                    <dd>Menampilkan beberapa pilihan yang sudah dikelompokkan dalam bentuk sebuah daftar drop-down</dd>
+                    <dt><code>&lt;option&gt;</code></dt>
+                    <dd>Menampilkan beberapa pilihan yang berbentuk dalam sebuah daftar drop-down</dd>
+                    <dt><code>&lt;label&gt;</code></dt>
+                    <dd>Mendefinisikan label untuk sebuah elemen &lt;input&gt;</dd>
+                    <dt><code>&lt;fieldset&gt;</code></dt>
+                    <dd>Untuk mengelompokkan elemen-elemen yang terkait dalam form / membuat seperti frame-box di dalam
+                        form</dd>
+                    <dt><code>&lt;legend&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah caption untuk elemen &lt;fieldset&gt;</dd>
+                    <dt><code>&lt;datalist&gt;</code></dt>
+                    <dd>Menentukan daftar opsi yang telah ditentukan untuk kontrol input</dd>
+                    <dt><code>&lt;output&gt;</code></dt>
+                    <dd>Menentukan hasil perhitungan</dd>
+                </dl>
+                <br />
+                <h3>
+                    Bingkai / Frame</h3>
+                <dl>
+                    <dt><code>&lt;frame /&gt;</code></dt>
+                    <dd>Mendefinisikan frame dalam fremeset</dd>
+                    <dt><code>&lt;frameset&gt;</code></dt>
+                    <dd>Mendefinisikan satu set frame</dd>
+                    <dt><code>&lt;iframe&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah inline frame</dd>
+                    <dt><code>&lt;img /&gt;</code></dt>
+                    <dd>Berfungsi untuk menampilkan gambar pada dokumen HTML</dd>
+                    <dt><code>&lt;noframes&gt;</code></dt>
+                    <dd>Jika browser user tidak mendukung frame</dd>
+                </dl>
+                <br />
+                <h3>
+                    Gambar / Images</h3>
+                <dl>
+                    <dt><code>&lt;img&gt;</code></dt>
+                    <dd>Menentukan gambar</dd>
+                    <dt><code>&lt;map&gt;</code></dt>
+                    <dd>Menentukan peta gambar sisi klien</dd>
+                    <dt><code>&lt;area&gt;</code></dt>
+                    <dd>Menentukan area di dalam peta-gambar</dd>
+                    <dt><code>&lt;canvas&gt;</code></dt>
+                    <dd>Digunakan untuk menggambar grafik, dengan cepat, melalui scripting (biasanya JavaScript)</dd>
+                    <dt><code>&lt;figcaption&gt;</code></dt>
+                    <dd>Menentukan keterangan untuk elemen &lt;figure&gt;</dd>
+                    <dt><code>&lt;figure&gt;</code></dt>
+                    <dd>Menentukan konten mandiri</dd>
+                    <dt><code>&lt;picture&gt;</code></dt>
+                    <dd>Menentukan wadah untuk banyak sumber gambar</dd>
+                    <dt><code>&lt;svg&gt;</code></dt>
+                    <dd>Menentukan wadah untuk grafik SVG</dd>
+                </dl>
+                <br />
+                <h3>
+                    Audio / Video</h3>
+                <dl>
+                    <dt><code>&lt;audio&gt;</code></dt>
+                    <dd>Menentukan konten suara</dd>
+                    <dt><code>&lt;source&gt;</code></dt>
+                    <dd>Menentukan banyak sumber daya media untuk elemen media (&lt;video&gt;, &lt;audio&gt; dan
+                        &lt;picture&gt;)</dd>
+                    <dt><code>&lt;track&gt;</code></dt>
+                    <dd>Menentukan trek teks untuk elemen media (&lt;video&gt; dan &lt;audio&gt;)</dd>
+                    <dt><code>&lt;video&gt;</code></dt>
+                    <dd>Menentukan video atau film</dd>
+                </dl>
+                <br />
+                <h3>
+                    Tautan / Link</h3>
+                <dl>
+                    <dt><code>&lt;a&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah anchor, tetapi lebih tepat jika diartikan sebagai tautan dikarenakan
+                        tautan ini digunakan untuk saling menautkan antara satu dokumen HTML ke dokumen HTML yang lain
+                    </dd>
+                    <dt><code>&lt;link&gt;</code></dt>
+                    <dd>Mendefinisikan hubungan antara dokumen dan sumber eksternalnya</dd>
+                    <dt><code>&lt;nav&gt;</code></dt>
+                    <dd>Mendefinisikan tautan navigasi</dd>
+                </dl>
+                <br />
+                <h3>
+                    Daftar / List</h3>
+                <dl>
+                    <dt><code>&lt;ol&gt;</code></dt>
+                    <dd>Mendefinisikan daftar dalam format penomoran</dd>
+                    <dt><code>&lt;ul&gt;</code></dt>
+                    <dd>Mendefinisikan daftar dalam format bullet</dd>
+                    <dt><code>&lt;li&gt;</code></dt>
+                    <dd>Digunakan untuk menampilkan informasi dalam bentuk item daftar</dd>
+                    <dt><code>&lt;dl&gt;</code></dt>
+                    <dd>Mendefinisikan sebuah daftar definisi</dd>
+                    <dt><code>&lt;dt&gt;</code></dt>
+                    <dd>Mendefinisikan istilah (item) dalam daftar definisi</dd>
+                    <dt><code>&lt;dd&gt;</code></dt>
+                    <dd>Mendefinisikan deskripsi dari item dalam daftar definisi</dd>
+                </dl>
+                <br />
+                <h3>
+                    Tabel</h3>
+                <dl>
+                    <dt><code>&lt;table&gt;</code></dt>
+                    <dd>Membuat tabel</dd>
+                    <dt><code>&lt;caption&gt;</code></dt>
+                    <dd>Membuat caption pada tabel</dd>
+                    <dt><code>&lt;th&gt;</code></dt>
+                    <dd>Mendefinisikan sel header di dalam sebuah tabel</dd>
+                    <dt><code>&lt;tr&gt;</code></dt>
+                    <dd>Membuat baris di dalam sebuah tabel</dd>
+                    <dt><code>&lt;td&gt;</code></dt>
+                    <dd>Mendefinisikan sel di dalam sebuah tabel</dd>
+                    <dt><code>&lt;thead&gt;</code></dt>
+                    <dd>Untuk mengelompokkan isi header di dalam sebuah tabel </dd>
+                    <dt><code>&lt;tbody&gt;</code></dt>
+                    <dd>Untuk mengelompokkan isi body di dalam sebuah tabel</dd>
+                    <dt><code>&lt;tfoot&gt;</code></dt>
+                    <dd>Untuk mengelompokkan isi footer di dalam sebuah tabel </dd>
+                    <dt><code>&lt;col /&gt;</code></dt>
+                    <dd>Mendefinisikan nilai atribut dari satu kolom atau lebih dalam sebuah tabel</dd>
+                    <dt><code>&lt;colgroup&gt;</code></dt>
+                    <dd>Menentukan kelompok dari satu kolom atau lebih dalam sebuah tabel untuk performatan</dd>
+                </dl>
+                <br />
+                <h3">
+                    Style dan Semantic</h3>
+                    <dl>
+                        <dt><code>&lt;style&gt;</code></dt>
+                        <dd>Mendefinisikan informasi style untuk dokumen HTML</dd>
+                        <dt><code>&lt;div&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah section dalam dokumen</dd>
+                        <dt><code>&lt;span&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah section dalam dokumen</dd>
+                        <dt><code>&lt;header&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah header atau section dalam dokumen</dd>
+                        <dt><code>&lt;footer&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah footer atau section dalam dokumen</dd>
+                        <dt><code>&lt;main&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah main atau section dalam dokumen</dd>
+                        <dt><code>&lt;section&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah section dalam dokumen</dd>
+                        <dt><code>&lt;article&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah article dalam dokumen</dd>
+                        <dt><code>&lt;aside&gt;</code></dt>
+                        <dd>Mendefinisikan sebuah aside dari konten dalam dokumen</dd>
+                        <dt><code>&lt;details&gt;</code></dt>
+                        <dd>Menentukan detail tambahan yang dapat dilihat atau disembunyikan pengguna</dd>
+                        <dt><code>&lt;dialog&gt;</code></dt>
+                        <dd>Menentukan kotak dialog atau jendela</dd>
+                        <dt><code>&lt;summary&gt;</code></dt>
+                        <dd>Menentukan heading yang terlihat untuk elemen &lt;details&gt;</dd>
+                        <dt><code>&lt;data&gt;</code></dt>
+                        <dd>Menautkan konten yang diberikan dengan terjemahan yang dapat dibaca mesin</dd>
+                    </dl>
+                    <br />
+                    <h3">
+                        Informasi Meta</h3>
+                        <dl>
+                            <dt><code>&lt;head&gt;</code></dt>
+                            <dd>Menentukan informasi tentang dokumen</dd>
+                            <dt><code>&lt;meta&gt;</code></dt>
+                            <dd>Menentukan metadata tentang dokumen HTML</dd>
+                            <dt><code>&lt;base&gt;</code></dt>
+                            <dd>Mendefinisikan URL dasar/target untuk semua URL relatif dalam dokumen</dd>
+                        </dl>
+                        <br />
+                        <h3">
+                            Pemrograman</h3>
+                            <dl>
+                                <dt><code>&lt;script&gt;</code></dt>
+                                <dd>Mendefinisikan client-side script</dd>
+                                <dt><code>&lt;noscript&gt;</code></dt>
+                                <dd>Jika browser user tidak mendukung client-side scripts</dd>
+                                <dt><code>&lt;embed&gt;</code></dt>
+                                <dd>Digunakan untuk memasukkan file video atau file musik</dd>
+                                <dt><code>&lt;object&gt;</code></dt>
+                                <dd>meletakkan embed sebuah objek</dd>
+                                <dt><code>&lt;param /&gt;</code></dt>
+                                <dd>Mendefinisikan sebuah parameter untuk objek</dd>
+                            </dl>
+                            <br />
+                            <hr />
+                            <h1>@sumber <a href="">w3-school</a></h1>
+    </section>
+</body>
+
+</html>
