@@ -4,69 +4,69 @@
         "nama": "Bath_Body",
         "keterangan": "Rekomendasi bath body category",
         "harga": "99.000",
-        "gambar": "'../assets/images/category/Bath_Body.jpg'"
+        "gambar": "'../../assets/images/category/Bath_Body.jpg'"
     },
     {
         "id": "2",
         "nama": "Fragrances",
         "keterangan": "Rekomendasi fragrances New",
         "harga": "199.000",
-        "gambar": "'../assets/images/category/Fragrances.jpg'"
+        "gambar": "'../../assets/images/category/Fragrances.jpg'"
     },
     {
         "id": "3",
         "nama": "Gifting",
         "keterangan": "Gifting recomendasi",
         "harga": "299.000",
-        "gambar": "'../assets/images/category/Gifting.jpg'"
+        "gambar": "'../../assets/images/category/Gifting.jpg'"
     },
     {
         "id": "4",
         "nama": "Haircare",
         "keterangan": "HairCare New arrivals collage",
         "harga": "199.000",
-        "gambar": "'../assets/images/category/Haircare.jpg'"
+        "gambar": "'../../assets/images/category/Haircare.jpg'"
     },
     {
         "id": "5",
         "nama": "Korean_Beauty",
         "keterangan": "Korean Beauty rekomendasi",
         "harga": "79.000",
-        "gambar": "'../assets/images/category/Korean_Beauty.jpg'"
+        "gambar": "'../../assets/images/category/Korean_Beauty.jpg'"
     },
     {
         "id": "6",
         "nama": "Make_up",
         "keterangan": "Make Up day and Night Rekomendasi",
         "harga": "99.000",
-        "gambar": "'../assets/images/category/Make_up.jpg'"
+        "gambar": "'../../assets/images/category/Make_up.jpg'"
     },
     {
         "id": "7",
         "nama": "Men",
         "keterangan": "Men Product New",
         "harga": "149.000",
-        "gambar": "'../assets/images/category/Men.jpg'"
+        "gambar": "'../../assets/images/category/Men.jpg'"
     },
     {
         "id": "8",
         "nama": "New_Arrivals",
         "keterangan": "New arrivals collage",
         "harga": "129.000",
-        "gambar": "'../assets/images/category/New_Arrivals.jpg'"
+        "gambar": "'../../assets/images/category/New_Arrivals.jpg'"
     },
     {
         "id": "9",
         "nama": "Skin_Care",
         "keterangan": "skin care package new",
         "harga": "159.000",
-        "gambar": "'../assets/images/category/Skin_Care.jpg'"
+        "gambar": "'../../assets/images/category/Skin_Care.jpg'"
     },
     {
         "id": "10",
         "nama": "Tools_Brushes",
         "keterangan": "rekomendasi tools brushes",
         "harga": "259.000",
-        "gambar": "'../assets/images/category/Tools_Brushes.jpg'"
+        "gambar": "'../../assets/images/category/Tools_Brushes.jpg'"
     }
 ]
