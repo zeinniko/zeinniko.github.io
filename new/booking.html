@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Layanan - Niko.dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased pb-20 md:pb-0 relative">
+
+    <nav class="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">NIKO.DEV</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-blue-400 font-medium transition-colors">Portofolio</a>
+                    <a href="booking.html" class="text-blue-400 font-bold border-b-2 border-blue-500 pb-1">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold tracking-tight mb-4">Layanan & Keahlian</h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Sewa keahlian saya untuk mengatasi masalah teknis bisnis Anda secara cepat dan efisien. Mulai dari sistem hingga automasi laporan, mari kita satset-kan!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesContainer">
+            </div>
+    </main>
+
+    <div id="serviceModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl relative transform transition-all">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="p-6">
+                <h3 id="modalTitle" class="text-2xl font-bold text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">Judul Layanan</h3>
+                <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-800 text-sm text-slate-300 leading-relaxed space-y-4">
+                    <p id="modalDesc"></p>
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Harga Mulai Dari</span>
+                        <span id="modalPrice" class="text-lg font-extrabold text-emerald-400">Rp 0</span>
+                    </div>
+                    <a id="modalWaBtn" href="#" target="_blank" class="bg-green-600 hover:bg-green-500 text-white font-medium px-5 py-2.5 rounded-lg flex items-center gap-2 transition-all">
+                        <i class="fab fa-whatsapp text-lg"></i> Pesan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-800 z-50">
+        <div class="flex justify-around items-center h-16">
+            <a href="index.html" class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-blue-400">
+                <i class="fas fa-briefcase text-xl mb-1"></i>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Portofolio</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center justify-center w-full h-full text-blue-400 relative">
+                <div class="absolute -top-3 bg-blue-600 text-white w-12 h-12 flex justify-center items-center rounded-full border-4 border-slate-900 shadow-lg">
+                    <i class="fas fa-calendar-check text-xl"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider mt-7">Book Now</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let servicesData = [];
+        
+        async function loadServices() {
+            try {
+                const response = await fetch('services.json');
+                if(response.ok) {
+                    servicesData = await response.json();
+                } else { throw new Error("Gagal load json"); }
+            } catch (err) {
+                console.log("CORS block deteksi. Memuat data fallback...", err);
+                servicesData = [
+                    { "id": 1, "title": "Automasi Laporan Excel", "description": "Apakah Anda lelah dengan entri data berulang setiap hari? Kami tawarkan solusi automasi satset. Udah 2026 masa manual!", "start_from": "Rp 500.000", "wa_message": "Halo Niko, mau tanya Automasi Excel" }
+                ];
+            }
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const container = document.getElementById('servicesContainer');
+            container.innerHTML = '';
+            
+            servicesData.forEach(s => {
+                const waUrl = `https://wa.me/6289681676100?text=${encodeURIComponent(s.wa_message)}`;
+                // Snippet ringkas untuk di card
+                const shortDesc = s.description.substring(0, 80) + '...';
+
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 rounded-2xl border border-slate-800 hover:border-slate-600 overflow-hidden flex flex-col transition-all group";
+                card.innerHTML = `
+                    <div class="p-6 flex-grow cursor-pointer" onclick="openModal(${s.id})">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-200 mb-2">${s.title}</h3>
+                        <p class="text-sm text-slate-500 mb-4">${shortDesc} <span class="text-blue-400 font-medium">Baca detail</span></p>
+                    </div>
+                    <div class="bg-slate-950 p-4 border-t border-slate-800 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-slate-500 uppercase font-bold block">Start From</span>
+                            <span class="text-emerald-400 font-bold">${s.start_from}</span>
+                        </div>
+                        <a href="${waUrl}" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                            <i class="fab fa-whatsapp text-green-400 mr-1"></i> Pesan
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openModal(id) {
+            const item = servicesData.find(x => x.id === id);
+            if(!item) return;
+            
+            document.getElementById('modalTitle').textContent = item.title;
+            // Highlight problem/solution approach
+            const boldedDesc = item.description.replace('Udah 2026', '<strong class="text-white">Udah 2026</strong>').replace('Solusinya,', '<strong class="text-emerald-400">Solusinya,</strong>');
+            document.getElementById('modalDesc').innerHTML = boldedDesc;
+            document.getElementById('modalPrice').textContent = item.start_from;
+            document.getElementById('modalWaBtn').href = `https://wa.me/6289681676100?text=${encodeURIComponent(item.wa_message)}`;
+            
+            document.getElementById('serviceModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside box
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if(e.target === this) closeModal();
+        });
+
+        window.addEventListener('DOMContentLoaded', loadServices);
+    </script>
+</body>
+</html>
