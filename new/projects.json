@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Wisata Merapi Jeep",
+    "role": "Lead Fullstack & Mobile",
+    "category": "Fullstack",
+    "desc": "Membangun sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi."
+  },
+  {
+    "name": "Waskita & Jasaraharja",
+    "role": "Maintenance Specialist",
+    "category": "Maintenance",
+    "desc": "Bertanggung jawab atas pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS)."
+  },
+  {
+    "name": "Tourguidein.com",
+    "role": "Backend Developer",
+    "category": "Backend",
+    "desc": "Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi."
+  },
+  {
+    "name": "Catatin.ai",
+    "role": "Fullstack Developer",
+    "category": "Fullstack",
+    "desc": "Mengembangkan landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis."
+  },
+  {
+    "name": "Sistem Broadcast WhatsApp",
+    "role": "Integration Specialist",
+    "category": "Integration",
+    "desc": "Mengintegrasikan WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template."
+  },
+  {
+    "name": "Noneton - Instagram Clone",
+    "role": "Maintenance",
+    "category": "Maintenance",
+    "desc": "Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial."
+  },
+  {
+    "name": "Proda Indonesia",
+    "role": "Mobile Developer",
+    "category": "Mobile",
+    "desc": "Membangun dan melakukan deployment aplikasi Mobile Webview fungsional untuk platform Android."
+  },
+  {
+    "name": "Aplikasi Area Polygon",
+    "role": "Software Engineer",
+    "category": "Fullstack",
+    "desc": "Menciptakan fitur interaktif pemilihan koordinat polygon dinamis berbasis gambar untuk pemetaan data."
+  },
+  {
+    "name": "Travel Umrah",
+    "role": "UI/UX Designer",
+    "category": "UI/UX",
+    "desc": "Merancang alur antarmuka (wireframe hingga prototype) untuk paket perjalanan dan manajemen jamaah."
+  }
+]
