@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Automasi Laporan Excel",
+    "description": "Apakah Anda seorang admin kantor, staf gudang, atau tukang rekap yang lelah dengan entri data berulang setiap hari? Proses manual ini memakan waktu dan rentan terhadap kesalahan ketik. Kami menawarkan solusi sistem automasi laporan instan berbasis VBA/Python. Cukup satu klik, laporan harian, mingguan, hingga visualisasi langsung jadi satset! Udah 2026 masak masih manual semua?",
+    "start_from": "Rp 100.000",
+    "wa_message": "Halo Niko, saya tertarik dengan layanan Automasi Laporan Excel. Bisa diskusi lebih lanjut?"
+  },
+  {
+    "id": 2,
+    "title": "Scrape Data (Web Scraping)",
+    "description": "Butuh data ribuan produk kompetitor atau riset pasar tapi pusing kalau harus copy-paste satu per satu? Tindakan manual ini tidak efisien. Solusinya, kami membuat bot scrapper khusus yang mampu menarik ribuan data terstruktur dari platform target ke format Excel/CSV secara otomatis, cepat, dan rapi.",
+    "start_from": "Rp 550.000",
+    "wa_message": "Halo Niko, saya butuh layanan Scrape Data. Bagaimana prosedurnya?"
+  },
+  {
+    "id": 3,
+    "title": "Bot Telegram Custom",
+    "description": "Layanan pelanggan kewalahan membalas pertanyaan berulang atau butuh memantau notifikasi server & transaksi secara real-time dari handphone? Menjawab manual 24/7 sangat melelahkan. Kami merancang Bot interaktif yang terintegrasi database untuk menjawab otomatis, broadcast massal, dan alert sistem kapan saja.",
+    "start_from": "Rp 1.100.000",
+    "wa_message": "Halo Niko, saya ingin membuat Bot Telegram Custom untuk kebutuhan saya."
+  },
+  {
+    "id": 4,
+    "title": "Website Personal / Company Profile",
+    "description": "Bisnis Anda belum memiliki kredibilitas digital atau personal branding Anda tidak terlihat profesional? Hanya mengandalkan media sosial tidak cukup. Kami membangun website profil perusahaan atau portofolio personal yang modern, cepat, responsif, serta SEO-friendly untuk meningkatkan trust Anda di internet.",
+    "start_from": "Rp 1.500.000",
+    "wa_message": "Halo Niko, saya mau bikin Website Company Profile / Personal yang modern."
+  },
+  {
+    "id": 5,
+    "title": "Dashboard Admin Custom",
+    "description": "Data operasional dan keuangan bisnis Anda tersebar berantakan di berbagai file sehingga sulit melacak performa? Keputusan bisnis jadi terhambat. Kami membangun Dashboard Admin berbasis Web yang menyatukan semua database Anda ke dalam bagan grafis interaktif dan ringkas untuk dipantau.",
+    "start_from": "Rp 3.000.000",
+    "wa_message": "Halo Niko, saya tertarik membuat Dashboard Admin untuk manajemen data."
+  },
+  {
+    "id": 6,
+    "title": "Aplikasi Mobile (Android & iOS)",
+    "description": "Pelanggan Anda menuntut kemudahan akses layanan melalui aplikasi, namun website saat ini kurang interaktif untuk push notification? Kami mengembangkan aplikasi mobile cross-platform (Flutter) berperforma tinggi untuk Android dan iOS dengan antarmuka yang modern, siap rilis ke Play Store/App Store.",
+    "start_from": "Rp 5.000.000",
+    "wa_message": "Halo Niko, saya mau konsultasi pembuatan Aplikasi Mobile Android & iOS."
+  },
+  {
+    "id": 7,
+    "title": "Kontrak Programmer",
+    "description": "Perusahaan Anda butuh mengeksekusi banyak fitur atau fixing bug segera, tapi merekrut developer full-time memakan biaya operasional dan waktu lama? Sewa keahlian saya dalam skema kontrak bulanan/proyek (Remote) guna menyelesaikan kendala teknis aplikasi Anda secara terarah dan satset.",
+    "start_from": "Hubungi Kontak",
+    "wa_message": "Halo Niko, saya tertarik mendiskusikan Kontrak Kerja Programmer untuk proyek perusahaan."
+  }
+]
