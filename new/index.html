@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niko - IT Programmer & Fullstack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            accent: '#6366f1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                        NIKO.DEV
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+                        <a href="#about" class="hover:text-blue-400 transition-colors">Profil</a>
+                        <a href="#experience" class="hover:text-blue-400 transition-colors">Pengalaman</a>
+                        <a href="#skills" class="hover:text-blue-400 transition-colors">Keahlian</a>
+                        <a href="#education" class="hover:text-blue-400 transition-colors">Pendidikan</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <!-- Mobile menu button (bisa ditambahkan js jika perlu toggle) -->
+                    <i class="fas fa-bars text-xl cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-[85vh] flex items-center justify-center relative overflow-hidden px-4">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.1),transparent_45%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.1),transparent_45%)]"></div>
+        
+        <div class="text-center z-10 max-w-3xl">
+            <span class="px-3 py-1 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
+                Available for Projects
+            </span>
+            <h1 class="mt-6 text-5xl md:text-7xl font-extrabold tracking-tight">
+                Hai, Saya <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">Niko</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-slate-400 font-medium">
+                IT Programmer | Fullstack & Mobile Developer
+            </p>
+            
+            <!-- CONTACT BADGES -->
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm text-slate-300">
+                <a href="https://wa.me/6289681676100" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700/50 transition-all">
+                    <i class="fab fa-whatsapp text-green-400"></i> +62 896-8167-6100
+                </a>
+                <a href="mailto:zeinniko712@gmail.com" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700/50 transition-all">
+                    <i class="far fa-envelope text-blue-400"></i> zeinniko712@gmail.com
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700/50 transition-all">
+                    <i class="fab fa-linkedin text-blue-500"></i> Zein Niko
+                </a>
+                <a href="https://github.com/zeinniko" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700/50 transition-all">
+                    <i class="fab fa-github text-slate-100"></i> @zeinniko
+                </a>
+            </div>
+
+            <div class="mt-10">
+                <a href="#experience" class="bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20 inline-block">
+                    Lihat Portofolio <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-800 max-w-5xl mx-auto">
+
+    <!-- PROFIL PROFESIONAL -->
+    <section id="about" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight border-l-4 border-emerald-500 pl-4">
+                    Profil<br>Profesional
+                </h2>
+            </div>
+            <div class="md:col-span-2 text-lg text-slate-400 leading-relaxed">
+                <p>
+                    IT Programmer yang berpengalaman sejak 2023 di industri retail besar nasional. Ahli dalam membangun solusi multi-platform <span class="text-slate-200 font-semibold">(Web, Desktop, Mobile & iOS)</span> dan mengoptimalkan infrastruktur teknologi. 
+                </p>
+                <p class="mt-4">
+                    Fokus utama saya adalah meningkatkan efisiensi alur kerja melalui automasi sistem serta mendukung pengambilan keputusan berbasis analisis data yang kuat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN KERJA -->
+    <section id="experience" class="py-20 bg-slate-950 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Pengalaman Kerja</h2>
+            
+            <!-- INDOMARCO -->
+            <div class="relative pl-6 sm:pl-8 border-l border-slate-800 pb-12">
+                <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-blue-500"></div>
+                <div class="flex flex-wrap justify-between items-start gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-100">Staff IT Support (Programmer)</h3>
+                        <p class="text-blue-400 font-medium">PT. Indomarco Prismatama</p>
+                    </div>
+                    <span class="px-3 py-1 text-xs bg-slate-800 rounded-full text-slate-400 border border-slate-700">Februari 2023 – Sekarang</span>
+                </div>
+                <ul class="space-y-2 text-slate-400 list-disc list-inside">
+                    <li><strong class="text-slate-300">Optimasi Alur Kerja:</strong> Mengembangkan sistem automasi internal yang memangkas proses manual dan meningkatkan efisiensi kerja tim.</li>
+                    <li><strong class="text-slate-300">Pengembangan Multi-Platform:</strong> Membangun dan memelihara aplikasi berbasis Web (PHP, JS), Desktop, dan Mobile untuk kebutuhan operasional perusahaan.</li>
+                    <li><strong class="text-slate-300">Manajemen Infrastruktur:</strong> Menjaga stabilitas infrastruktur IT serta mengelola database SQL untuk kelancaran bisnis skala besar.</li>
+                    <li><strong class="text-slate-300">Analytical Problem Solving:</strong> Analisis kebutuhan data strategis untuk menghadirkan solusi teknis operasional harian.</li>
+                </ul>
+            </div>
+
+            <!-- FREELANCE / REAL PROJECTS -->
+            <div class="relative pl-6 sm:pl-8 border-l border-slate-800">
+                <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
+                <div class="flex flex-wrap justify-between items-start gap-2 mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-100">Freelance Developer</h3>
+                        <p class="text-emerald-400 font-medium">Base Real Project</p>
+                    </div>
+                    <span class="px-3 py-1 text-xs bg-slate-800 rounded-full text-slate-400 border border-slate-700">Project-Based</span>
+                </div>
+                
+                <!-- Project Grid -->
+                <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                    <!-- Project 1 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Wisata Merapi Jeep</h4>
+                            <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">Lead Fullstack & Mobile</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi.</p>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Waskita & Jasaraharja</h4>
+                            <span class="text-xs text-indigo-400 bg-indigo-400/10 px-2 py-0.5 rounded">Maintenance Specialist</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS).</p>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Tourguidein.com</h4>
+                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">Backend Developer</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi.</p>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Catatin.ai</h4>
+                            <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">Fullstack Developer</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis.</p>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Sistem Broadcast WhatsApp</h4>
+                            <span class="text-xs text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">Integration Specialist</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Integrasi WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template.</p>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-slate-200">Noneton (Instagram Clone)</h4>
+                            <span class="text-xs text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">Maintenance</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEAHLIAN TEKNIS -->
+    <section id="skills" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Keahlian Teknis</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-code"></i></div>
+                <h3 class="text-lg font-bold text-slate-200 mb-3">Programming</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">PHP</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">JavaScript</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Python</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Flutter (Dart)</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Swift</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+                <div class="text-emerald-400 text-2xl mb-4"><i class="fas fa-layer-group"></i></div>
+                <h3 class="text-lg font-bold text-slate-200 mb-3">Frameworks</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Laravel</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">React</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+                <div class="text-indigo-400 text-2xl mb-4"><i class="fas fa-database"></i></div>
+                <h3 class="text-lg font-bold text-slate-200 mb-3">Databases</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">MySQL</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">PostgreSQL</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Supabase</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">MongoDB</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Firebase</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+                <div class="text-purple-400 text-2xl mb-4"><i class="fas fa-tools"></i></div>
+                <h3 class="text-lg font-bold text-slate-200 mb-3">Tools & OS</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Desktop Dev</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Infrastruktur IT</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Git</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Docker</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PENDIDIKAN -->
+    <section id="education" class="py-20 bg-slate-950 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold tracking-tight mb-8">Pendidikan</h2>
+            <div class="p-8 bg-slate-900 rounded-2xl border border-slate-800 inline-block text-left w-full">
+                <div class="flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-100">S1 Informatika</h3>
+                        <p class="text-blue-400">Institut Teknologi dan Bisnis Palcomtech</p>
+                    </div>
+                    <span class="px-4 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 text-sm font-semibold">Lulus 2024</span>
+                </div>
+                <p class="mt-4 text-slate-400 text-sm border-t border-slate-800 pt-4">
+                    <i class="fas fa-info-circle mr-2 text-slate-500"></i>Menyelesaikan studi sarjana sambil aktif bekerja secara profesional sebagai IT di industri retail besar nasional.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-sm text-slate-500 border-t border-slate-800">
+        <p>© 2026 Niko. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
