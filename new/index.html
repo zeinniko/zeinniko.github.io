@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niko - IT Programmer & Fullstack Developer</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -27,7 +25,6 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-    <!-- NAVBAR -->
     <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -45,15 +42,10 @@
                         <a href="#education" class="hover:text-blue-400 transition-colors">Pendidikan</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <!-- Mobile menu button (bisa ditambahkan js jika perlu toggle) -->
-                    <i class="fas fa-bars text-xl cursor-pointer"></i>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section id="home" class="min-h-[85vh] flex items-center justify-center relative overflow-hidden px-4">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.1),transparent_45%)]"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.1),transparent_45%)]"></div>
@@ -69,7 +61,6 @@
                 IT Programmer | Fullstack & Mobile Developer
             </p>
             
-            <!-- CONTACT BADGES -->
             <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm text-slate-300">
                 <a href="https://wa.me/6289681676100" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700/50 transition-all">
                     <i class="fab fa-whatsapp text-green-400"></i> +62 896-8167-6100
@@ -95,7 +86,6 @@
 
     <hr class="border-slate-800 max-w-5xl mx-auto">
 
-    <!-- PROFIL PROFESIONAL -->
     <section id="about" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8 items-center">
             <div>
@@ -114,12 +104,10 @@
         </div>
     </section>
 
-    <!-- PENGALAMAN KERJA -->
     <section id="experience" class="py-20 bg-slate-950 px-4 sm:px-6 lg:px-8">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Pengalaman Kerja</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Pengalaman Kerja & Proyek</h2>
             
-            <!-- INDOMARCO -->
             <div class="relative pl-6 sm:pl-8 border-l border-slate-800 pb-12">
                 <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-blue-500"></div>
                 <div class="flex flex-wrap justify-between items-start gap-2 mb-4">
@@ -130,14 +118,13 @@
                     <span class="px-3 py-1 text-xs bg-slate-800 rounded-full text-slate-400 border border-slate-700">Februari 2023 – Sekarang</span>
                 </div>
                 <ul class="space-y-2 text-slate-400 list-disc list-inside">
-                    <li><strong class="text-slate-300">Optimasi Alur Kerja:</strong> Mengembangkan sistem automasi internal yang memangkas proses manual dan meningkatkan efisiensi kerja tim.</li>
-                    <li><strong class="text-slate-300">Pengembangan Multi-Platform:</strong> Membangun dan memelihara aplikasi berbasis Web (PHP, JS), Desktop, dan Mobile untuk kebutuhan operasional perusahaan.</li>
-                    <li><strong class="text-slate-300">Manajemen Infrastruktur:</strong> Menjaga stabilitas infrastruktur IT serta mengelola database SQL untuk kelancaran bisnis skala besar.</li>
-                    <li><strong class="text-slate-300">Analytical Problem Solving:</strong> Analisis kebutuhan data strategis untuk menghadirkan solusi teknis operasional harian.</li>
+                    <li><strong class="text-slate-300">Optimasi Alur Kerja:</strong> Mengembangkan sistem automasi internal yang memangkas proses manual.</li>
+                    <li><strong class="text-slate-300">Pengembangan Multi-Platform:</strong> Membangun & memelihara aplikasi Web (PHP, JS), Desktop, dan Mobile.</li>
+                    <li><strong class="text-slate-300">Manajemen Infrastruktur:</strong> Menjaga stabilitas infrastruktur IT serta mengelola database SQL bisnis skala besar.</li>
+                    <li><strong class="text-slate-300">Analytical Problem Solving:</strong> Analisis kebutuhan data strategis untuk solusi operasional harian.</li>
                 </ul>
             </div>
 
-            <!-- FREELANCE / REAL PROJECTS -->
             <div class="relative pl-6 sm:pl-8 border-l border-slate-800">
                 <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
                 <div class="flex flex-wrap justify-between items-start gap-2 mb-6">
@@ -148,67 +135,34 @@
                     <span class="px-3 py-1 text-xs bg-slate-800 rounded-full text-slate-400 border border-slate-700">Project-Based</span>
                 </div>
                 
-                <!-- Project Grid -->
-                <div class="grid sm:grid-cols-2 gap-4 mt-4">
-                    <!-- Project 1 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Wisata Merapi Jeep</h4>
-                            <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">Lead Fullstack & Mobile</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi.</p>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 mb-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+                    <div class="relative w-full md:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" id="searchProject" placeholder="Cari nama proyek..." class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-10 pr-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition-colors">
                     </div>
-                    <!-- Project 2 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Waskita & Jasaraharja</h4>
-                            <span class="text-xs text-indigo-400 bg-indigo-400/10 px-2 py-0.5 rounded">Maintenance Specialist</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS).</p>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Tourguidein.com</h4>
-                            <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">Backend Developer</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi.</p>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Catatin.ai</h4>
-                            <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">Fullstack Developer</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis.</p>
-                    </div>
-                    <!-- Project 5 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Sistem Broadcast WhatsApp</h4>
-                            <span class="text-xs text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">Integration Specialist</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Integrasi WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template.</p>
-                    </div>
-                    <!-- Project 6 -->
-                    <div class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-bold text-slate-200">Noneton (Instagram Clone)</h4>
-                            <span class="text-xs text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">Maintenance</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial.</p>
+                    
+                    <div class="flex flex-wrap gap-2 w-full md:w-auto justify-start md:justify-end">
+                        <button onclick="filterRole('All')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-600 text-white border border-blue-500 transition-all">All</button>
+                        <button onclick="filterRole('Fullstack')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Fullstack</button>
+                        <button onclick="filterRole('Mobile')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Mobile</button>
+                        <button onclick="filterRole('Backend')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Backend</button>
+                        <button onclick="filterRole('Integration')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Integration</button>
+                        <button onclick="filterRole('Maintenance')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Maintenance</button>
+                        <button onclick="filterRole('UI/UX')" class="role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">UI/UX</button>
                     </div>
                 </div>
+
+                <div class="grid sm:grid-cols-2 gap-4" id="projectContainer">
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- KEAHLIAN TEKNIS -->
     <section id="skills" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Keahlian Teknis</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Card 1 -->
             <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
                 <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-code"></i></div>
                 <h3 class="text-lg font-bold text-slate-200 mb-3">Programming</h3>
@@ -216,12 +170,10 @@
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">PHP</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">JavaScript</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Python</span>
-                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Flutter (Dart)</span>
+                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Flutter</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Swift</span>
                 </div>
             </div>
-
-            <!-- Card 2 -->
             <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
                 <div class="text-emerald-400 text-2xl mb-4"><i class="fas fa-layer-group"></i></div>
                 <h3 class="text-lg font-bold text-slate-200 mb-3">Frameworks</h3>
@@ -230,8 +182,6 @@
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">React</span>
                 </div>
             </div>
-
-            <!-- Card 3 -->
             <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
                 <div class="text-indigo-400 text-2xl mb-4"><i class="fas fa-database"></i></div>
                 <h3 class="text-lg font-bold text-slate-200 mb-3">Databases</h3>
@@ -239,27 +189,21 @@
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">MySQL</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">PostgreSQL</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Supabase</span>
-                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">MongoDB</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Firebase</span>
                 </div>
             </div>
-
-            <!-- Card 4 -->
             <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
                 <div class="text-purple-400 text-2xl mb-4"><i class="fas fa-tools"></i></div>
                 <h3 class="text-lg font-bold text-slate-200 mb-3">Tools & OS</h3>
                 <div class="flex flex-wrap gap-2">
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Desktop Dev</span>
-                    <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Infrastruktur IT</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Git</span>
                     <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Docker</span>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- PENDIDIKAN -->
     <section id="education" class="py-20 bg-slate-950 px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-bold tracking-tight mb-8">Pendidikan</h2>
@@ -278,10 +222,103 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="py-8 text-center text-sm text-slate-500 border-t border-slate-800">
         <p>© 2026 Niko. All rights reserved.</p>
     </footer>
 
+    <script>
+        let projects = [];
+        let currentRole = 'All';
+        let searchQuery = '';
+
+        // Memuat data dari file JSON eksternal
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                if (response.ok) {
+                    projects = await response.json();
+                } else {
+                    throw new Error('Gagal memuat file eksternal json.');
+                }
+            } catch (error) {
+                console.log("Menjalankan data cadangan (fallback). Pastikan Anda menggunakan Live Server agar Fetch API berfungsi.", error.message);
+                // Data Cadangan otomatis jika file HTML dibuka langsung klik ganda (CORS block) tanpa local server
+                projects = [
+                    { "name": "Wisata Merapi Jeep", "role": "Lead Fullstack & Mobile", "category": "Fullstack", "desc": "Membangun sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi." },
+                    { "name": "Waskita & Jasaraharja", "role": "Maintenance Specialist", "category": "Maintenance", "desc": "Bertanggung jawab atas pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS)." },
+                    { "name": "Tourguidein.com", "role": "Backend Developer", "category": "Backend", "desc": "Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi." },
+                    { "name": "Catatin.ai", "role": "Fullstack Developer", "category": "Fullstack", "desc": "Mengembangkan landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis." },
+                    { "name": "Sistem Broadcast WhatsApp", "role": "Integration Specialist", "category": "Integration", "desc": "Mengintegrasikan WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template." },
+                    { "name": "Noneton - Instagram Clone", "role": "Maintenance", "category": "Maintenance", "desc": "Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial." },
+                    { "name": "Proda Indonesia", "role": "Mobile Developer", "category": "Mobile", "desc": "Membangun dan melakukan deployment aplikasi Mobile Webview fungsional untuk platform Android." },
+                    { "name": "Aplikasi Area Polygon", "role": "Software Engineer", "category": "Fullstack", "desc": "Menciptakan fitur interaktif pemilihan koordinat polygon dinamis berbasis gambar untuk pemetaan data." },
+                    { "name": "Travel Umrah", "role": "UI/UX Designer", "category": "UI/UX", "desc": "Merancang alur antarmuka (wireframe hingga prototype) untuk paket perjalanan dan manajemen jamaah." }
+                ];
+            }
+            renderProjects();
+        }
+
+        // Fungsi merender list proyek ke HTML berdasarkan filter & search
+        function renderProjects() {
+            const container = document.getElementById('projectContainer');
+            container.innerHTML = '';
+
+            const filtered = projects.filter(p => {
+                const matchesRole = currentRole === 'All' || p.category.toLowerCase() === currentRole.toLowerCase() || p.role.toLowerCase().includes(currentRole.toLowerCase());
+                const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesRole && matchesSearch;
+            });
+
+            if(filtered.length === 0) {
+                container.innerHTML = `<div class="col-span-2 text-center py-8 text-slate-500 text-sm"><i class="fas fa-folder-open mb-2 text-xl block"></i> Proyek tidak ditemukan.</div>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                let badgeColor = 'bg-blue-400/10 text-blue-400';
+                if(p.category === 'Mobile') badgeColor = 'bg-emerald-400/10 text-emerald-400';
+                if(p.category === 'Backend') badgeColor = 'bg-indigo-400/10 text-indigo-400';
+                if(p.category === 'Maintenance') badgeColor = 'bg-amber-400/10 text-amber-400';
+                if(p.category === 'UI/UX') badgeColor = 'bg-pink-400/10 text-pink-400';
+
+                const card = document.createElement('div');
+                card.className = "p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-all transform hover:-translate-y-1 duration-200";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start gap-4 mb-2">
+                        <h4 class="font-bold text-slate-200">${p.name}</h4>
+                        <span class="text-xs ${badgeColor} px-2 py-0.5 rounded flex-shrink-0 font-medium">${p.role}</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">${p.desc}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Fungsi menangani pergantian filter kategori
+        function filterRole(role) {
+            currentRole = role;
+            
+            // Ubah tampilan style tombol filter aktif/non-aktif
+            const buttons = document.querySelectorAll('.role-btn');
+            buttons.forEach(btn => {
+                if(btn.textContent.trim().toLowerCase() === role.toLowerCase()) {
+                    btn.className = "role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-600 text-white border border-blue-500 transition-all";
+                } else {
+                    btn.className = "role-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all";
+                }
+            });
+
+            renderProjects();
+        }
+
+        // Event listener ketikan pada kolom pencarian nama
+        document.getElementById('searchProject').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProjects();
+        });
+
+        // Load data awal saat web dibuka
+        window.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
 </body>
 </html>
