@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Niko & Nana</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            800: '#5c4d47',
+                            900: '#4a3f3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styling for Timeline Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: #e5e7eb;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 1rem;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Wrapper for Mobile-First Display -->
+    <div class="max-w-2xl mx-auto bg-white min-h-screen shadow-xl overflow-hidden relative">
+
+        <!-- Hero Section -->
+        <header class="relative h-screen flex flex-col items-center justify-center p-8 text-center">
+            <!-- Skeleton Image Background -->
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-gray-200 animate-pulse"></div>
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10" data-aos="fade-up" data-aos-duration="1500">
+                <p class="text-sm tracking-widest uppercase mb-4 font-medium text-brand-800">Undangan Pernikahan</p>
+                <h1 class="font-script text-7xl md:text-8xl text-brand-900 mb-6 drop-shadow-sm">Niko & Nana</h1>
+                <p class="font-serif italic text-lg md:text-xl text-brand-800">Juli 2026</p>
+            </div>
+            
+            <div class="absolute bottom-10 z-10 animate-bounce" data-aos="fade-up" data-aos-delay="500">
+                <p class="text-xs uppercase tracking-widest mb-2">Scroll ke bawah</p>
+                <svg class="w-6 h-6 mx-auto text-brand-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </header>
+
+        <!-- Quotes Section -->
+        <section class="py-16 px-8 text-center bg-brand-100/30">
+            <div data-aos="fade-up">
+                <h2 class="font-script text-4xl mb-4 text-brand-800">Kisah Kami</h2>
+                <p class="font-serif italic text-sm md:text-base leading-relaxed text-gray-600 max-w-lg mx-auto">
+                    "Tidak ada yang kebetulan di dunia ini, semua sudah tersusun sangat rapi oleh Sang Maha Kuasa."
+                </p>
+            </div>
+        </section>
+
+        <!-- Love Story / Timeline Section -->
+        <section class="py-16 px-6 md:px-12 relative">
+            <div class="relative timeline-line">
+                
+                <!-- 1. Pertemuan -->
+                <div class="relative z-10 mb-16 md:flex md:justify-between md:items-center w-full group" data-aos="fade-up">
+                    <div class="hidden md:block md:w-5/12 text-right pr-8">
+                        <h3 class="font-serif text-2xl font-semibold mb-1">Pertemuan</h3>
+                        <span class="text-sm text-brand-800 font-medium tracking-wider">Tahun 2020</span>
+                        <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                            Kita tidak bisa memilih kepada siapa kita akan jatuh cinta. Kami bertemu pertama kalinya di tahun 2020 sebagai rekan kerja dan menjadi awal perjalanan panjang kami.
+                        </p>
+                    </div>
+                    <!-- Skeleton Image for Timeline -->
+                    <div class="ml-10 md:ml-0 md:w-2/12 flex justify-center mb-4 md:mb-0 relative">
+                        <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gray-200 animate-pulse border-4 border-white shadow-lg z-10"></div>
+                    </div>
+                    <div class="ml-10 md:hidden pb-4">
+                        <h3 class="font-serif text-xl font-semibold mb-1">Pertemuan</h3>
+                        <span class="text-xs text-brand-800 font-medium tracking-wider">Tahun 2020</span>
+                        <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                            Kita tidak bisa memilih kepada siapa kita akan jatuh cinta. Kami bertemu pertama kalinya di tahun 2020 sebagai rekan kerja dan menjadi awal perjalanan panjang kami.
+                        </p>
+                    </div>
+                    <div class="hidden md:block md:w-5/12 pl-8"></div>
+                </div>
+
+                <!-- 2. Pendekatan -->
+                <div class="relative z-10 mb-16 md:flex md:justify-between md:items-center w-full group" data-aos="fade-up">
+                    <div class="hidden md:block md:w-5/12 pr-8"></div>
+                    <!-- Skeleton Image for Timeline -->
+                    <div class="ml-10 md:ml-0 md:w-2/12 flex justify-center mb-4 md:mb-0 relative">
+                        <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gray-300 animate-pulse border-4 border-white shadow-lg z-10"></div>
+                    </div>
+                    <div class="ml-10 md:ml-0 md:w-5/12 md:pl-8 pb-4">
+                        <h3 class="font-serif text-xl md:text-2xl font-semibold mb-1">Pendekatan</h3>
+                        <span class="text-xs md:text-sm text-brand-800 font-medium tracking-wider">Tahun 2021 - 2025</span>
+                        <p class="mt-2 md:mt-3 text-sm text-gray-600 leading-relaxed">
+                            Katanya cinta dapat tumbuh dengan kebersamaan. Di tahun 2021 kami tidak lagi menjadi rekan kerja sehingga lost kontak, dan di tahun 2025 kami bertemu kembali. Kami semakin dekat, memang tidak ada kata pacaran tapi tuhan mentakdirkan kita untuk bersama.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Lamaran -->
+                <div class="relative z-10 mb-16 md:flex md:justify-between md:items-center w-full group" data-aos="fade-up">
+                    <div class="hidden md:block md:w-5/12 text-right pr-8">
+                        <h3 class="font-serif text-2xl font-semibold mb-1">Lamaran</h3>
+                        <span class="text-sm text-brand-800 font-medium tracking-wider">Tahun 2026</span>
+                        <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                            Setelah saling menguatkan, kami memutuskan untuk ke jenjang yang lebih serius dengan mempertemukan keluarga besar kami dan membawa harapan baru dalam ikatan yang lebih serius.
+                        </p>
+                    </div>
+                    <!-- Skeleton Image for Timeline -->
+                    <div class="ml-10 md:ml-0 md:w-2/12 flex justify-center mb-4 md:mb-0 relative">
+                        <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gray-200 animate-pulse border-4 border-white shadow-lg z-10"></div>
+                    </div>
+                    <div class="ml-10 md:hidden pb-4">
+                        <h3 class="font-serif text-xl font-semibold mb-1">Lamaran</h3>
+                        <span class="text-xs text-brand-800 font-medium tracking-wider">Tahun 2026</span>
+                        <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                            Setelah saling menguatkan, kami memutuskan untuk ke jenjang yang lebih serius dengan mempertemukan keluarga besar kami dan membawa harapan baru dalam ikatan yang lebih serius.
+                        </p>
+                    </div>
+                    <div class="hidden md:block md:w-5/12 pl-8"></div>
+                </div>
+
+                <!-- 4. Pernikahan -->
+                <div class="relative z-10 md:flex md:justify-between md:items-center w-full group" data-aos="fade-up">
+                    <div class="hidden md:block md:w-5/12 pr-8"></div>
+                    <!-- Skeleton Image for Timeline -->
+                    <div class="ml-10 md:ml-0 md:w-2/12 flex justify-center mb-4 md:mb-0 relative">
+                        <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-gray-300 animate-pulse border-4 border-white shadow-lg z-10"></div>
+                    </div>
+                    <div class="ml-10 md:ml-0 md:w-5/12 md:pl-8 pb-4">
+                        <h3 class="font-serif text-xl md:text-2xl font-semibold mb-1">Pernikahan</h3>
+                        <span class="text-xs md:text-sm text-brand-800 font-medium tracking-wider">Juli 2026</span>
+                        <p class="mt-2 md:mt-3 text-sm text-gray-600 leading-relaxed">
+                            Bukan karna bertemu lalu berjodoh tapi karna berjodohlah kami bisa bertemu kembali. Tidak mencari kesempurnaan tapi saling melengkapi kekurangan. Kami memutuskan untuk mengikrarkan janji suci pernikahan kami insyaallah akan dilaksanakan pada bulan Juli 2026.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer / Closing -->
+        <footer class="py-12 px-8 text-center bg-brand-900 text-brand-50" data-aos="fade-up">
+            <h2 class="font-script text-5xl mb-4 text-brand-100">Niko & Nana</h2>
+            <p class="font-sans text-xs tracking-widest uppercase text-brand-100/70">Juli 2026</p>
+            <div class="mt-8 pt-8 border-t border-brand-800/50">
+                <p class="text-xs text-brand-100/50">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // Animasi hanya berjalan sekali
+            offset: 100, // Mulai animasi ketika elemen 100px dari bawah layar
+            duration: 800, // Durasi animasi dalam milidetik
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+</html>
