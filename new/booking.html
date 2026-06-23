@@ -13,9 +13,20 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <a href="index.html" class="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">NIKO.NANA</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-blue-400 font-medium transition-colors">Portofolio</a>
+                
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" data-i18n="nav_portofolio" class="hover:text-blue-400 font-medium transition-colors">Portofolio</a>
                     <a href="booking.html" class="text-blue-400 font-bold border-b-2 border-blue-500 pb-1">Book Now</a>
+                    
+                    <div class="flex items-center ml-4 border-l border-slate-700 pl-4">
+                        <button onclick="toggleLang()" id="langToggle" class="px-3 py-1.5 bg-slate-800 rounded-lg border border-slate-700 text-sm hover:border-slate-500 transition-all cursor-pointer select-none">
+                            </button>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleLang()" id="langToggleMobile" class="px-3 py-1.5 bg-slate-800 rounded-lg border border-slate-700 text-sm hover:border-slate-500 transition-all cursor-pointer select-none">
+                        </button>
                 </div>
             </div>
         </div>
@@ -23,8 +34,8 @@
 
     <main class="max-w-6xl mx-auto px-4 py-12">
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-extrabold tracking-tight mb-4">Layanan & Keahlian</h1>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Sewa keahlian saya untuk mengatasi masalah teknis bisnis Anda secara cepat dan efisien. Mulai dari sistem hingga automasi laporan, mari kita satset-kan!</p>
+            <h1 data-i18n="book_title" class="text-4xl font-extrabold tracking-tight mb-4">Layanan & Keahlian</h1>
+            <p data-i18n="book_subtitle" class="text-slate-400 text-lg max-w-2xl mx-auto">Sewa keahlian saya untuk mengatasi masalah teknis bisnis Anda secara cepat dan efisien. Mulai dari sistem hingga automasi laporan, mari kita satset-kan!</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesContainer">
@@ -43,11 +54,11 @@
                 </div>
                 <div class="mt-6 flex items-center justify-between">
                     <div>
-                        <span class="block text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Harga Mulai Dari</span>
+                        <span data-i18n="modal_price_label" class="block text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Harga Mulai Dari</span>
                         <span id="modalPrice" class="text-lg font-extrabold text-emerald-400">Rp 0</span>
                     </div>
                     <a id="modalWaBtn" href="#" target="_blank" class="bg-green-600 hover:bg-green-500 text-white font-medium px-5 py-2.5 rounded-lg flex items-center gap-2 transition-all">
-                        <i class="fab fa-whatsapp text-lg"></i> Pesan
+                        <i class="fab fa-whatsapp text-lg"></i> <span data-i18n="btn_pesan">Pesan</span>
                     </a>
                 </div>
             </div>
@@ -58,7 +69,7 @@
         <div class="flex justify-around items-center h-16">
             <a href="index.html" class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-blue-400">
                 <i class="fas fa-briefcase text-xl mb-1"></i>
-                <span class="text-[10px] font-medium uppercase tracking-wider">Portofolio</span>
+                <span data-i18n="nav_portofolio" class="text-[10px] font-medium uppercase tracking-wider">Portofolio</span>
             </a>
             <a href="booking.html" class="flex flex-col items-center justify-center w-full h-full text-blue-400 relative">
                 <div class="absolute -top-3 bg-blue-600 text-white w-12 h-12 flex justify-center items-center rounded-full border-4 border-slate-900 shadow-lg">
@@ -70,6 +81,56 @@
     </div>
 
     <script>
+        // KAMUS TERJEMAHAN (DICTIONARY)
+        const i18n = {
+            id: {
+                nav_portofolio: "Portofolio",
+                book_title: "Layanan & Keahlian",
+                book_subtitle: "Sewa keahlian saya untuk mengatasi masalah teknis bisnis Anda secara cepat dan efisien. Mulai dari sistem hingga automasi laporan, mari kita satset-kan!",
+                read_detail: "Baca detail",
+                start_from: "Start From",
+                modal_price_label: "Harga Mulai Dari",
+                btn_pesan: "Pesan"
+            },
+            en: {
+                nav_portofolio: "Portfolio",
+                book_title: "Services & Expertise",
+                book_subtitle: "Hire my expertise to solve your business technical issues quickly and efficiently. From system creation to report automation, let's get it done!",
+                read_detail: "Read details",
+                start_from: "Start From",
+                modal_price_label: "Starting Price",
+                btn_pesan: "Order"
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'id';
+
+        function updateLangUI() {
+            // Update UI Tombol Toggle (Desktop & Mobile)
+            const htmlToggle = currentLang === 'id' 
+                ? `<span class="text-white font-bold">ID</span> <span class="text-slate-500 mx-1">|</span> <span class="text-slate-500">EN</span>`
+                : `<span class="text-slate-500">ID</span> <span class="text-slate-500 mx-1">|</span> <span class="text-white font-bold">EN</span>`;
+            
+            document.getElementById('langToggle').innerHTML = htmlToggle;
+            document.getElementById('langToggleMobile').innerHTML = htmlToggle;
+
+            // Update Teks HTML statis
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key];
+            });
+
+            // Re-render katalog produk agar teks di dalam kartu ikut berubah bahasa
+            renderCatalog();
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('lang', currentLang);
+            updateLangUI();
+        }
+
+        // LOGIKA KATALOG JSON BILINGUAL
         let servicesData = [];
         
         async function loadServices() {
@@ -81,20 +142,32 @@
             } catch (err) {
                 console.log("CORS block deteksi. Memuat data fallback...", err);
                 servicesData = [
-                    { "id": 1, "title": "Automasi Laporan Excel", "description": "Apakah Anda lelah dengan entri data berulang setiap hari? Kami tawarkan solusi automasi satset. Udah 2026 masa manual!", "start_from": "Rp 500.000", "wa_message": "Halo Niko, mau tanya Automasi Excel" }
+                    { 
+                        "id": 1, 
+                        "title": { "id": "Automasi Laporan Excel", "en": "Excel Report Automation" }, 
+                        "description": { "id": "Apakah Anda lelah dengan entri data berulang setiap hari? Kami tawarkan solusi automasi satset. Udah 2026 masa manual!", "en": "Are you tired of repetitive data entry? We offer instant automation. It's 2026, stop doing it manually!" }, 
+                        "start_from": { "id": "Rp 100.000", "en": "Rp 100.000" }, 
+                        "wa_message": { "id": "Halo Niko, mau tanya Automasi Excel", "en": "Hi Niko, I want to ask about Excel Automation" }
+                    }
                 ];
             }
-            renderCatalog();
+            updateLangUI(); // Memicu update UI dan perenderan awal
         }
 
         function renderCatalog() {
             const container = document.getElementById('servicesContainer');
+            if(servicesData.length === 0) return;
             container.innerHTML = '';
             
             servicesData.forEach(s => {
-                const waUrl = `https://wa.me/6289681676100?text=${encodeURIComponent(s.wa_message)}`;
-                // Snippet ringkas untuk di card
-                const shortDesc = s.description.substring(0, 80) + '...';
+                // Menangkap data JSON sesuai bahasa yang aktif
+                const sTitle = s.title[currentLang] || s.title.id;
+                const sDesc = s.description[currentLang] || s.description.id;
+                const sPrice = s.start_from[currentLang] || s.start_from.id;
+                const sWa = s.wa_message[currentLang] || s.wa_message.id;
+
+                const waUrl = `https://wa.me/6289681676100?text=${encodeURIComponent(sWa)}`;
+                const shortDesc = sDesc.substring(0, 80) + '...';
 
                 const card = document.createElement('div');
                 card.className = "bg-slate-900 rounded-2xl border border-slate-800 hover:border-slate-600 overflow-hidden flex flex-col transition-all group";
@@ -103,16 +176,16 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
                             <i class="fas fa-laptop-code text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-200 mb-2">${s.title}</h3>
-                        <p class="text-sm text-slate-500 mb-4">${shortDesc} <span class="text-blue-400 font-medium">Baca detail</span></p>
+                        <h3 class="text-xl font-bold text-slate-200 mb-2">${sTitle}</h3>
+                        <p class="text-sm text-slate-500 mb-4">${shortDesc} <span class="text-blue-400 font-medium">${i18n[currentLang].read_detail}</span></p>
                     </div>
                     <div class="bg-slate-950 p-4 border-t border-slate-800 flex justify-between items-center">
                         <div>
-                            <span class="text-[10px] text-slate-500 uppercase font-bold block">Start From</span>
-                            <span class="text-emerald-400 font-bold">${s.start_from}</span>
+                            <span class="text-[10px] text-slate-500 uppercase font-bold block">${i18n[currentLang].start_from}</span>
+                            <span class="text-emerald-400 font-bold">${sPrice}</span>
                         </div>
                         <a href="${waUrl}" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                            <i class="fab fa-whatsapp text-green-400 mr-1"></i> Pesan
+                            <i class="fab fa-whatsapp text-green-400 mr-1"></i> ${i18n[currentLang].btn_pesan}
                         </a>
                     </div>
                 `;
@@ -123,13 +196,25 @@
         function openModal(id) {
             const item = servicesData.find(x => x.id === id);
             if(!item) return;
+
+            // Menangkap data JSON sesuai bahasa aktif untuk ditampilkan di Modal
+            const sTitle = item.title[currentLang] || item.title.id;
+            const sDesc = item.description[currentLang] || item.description.id;
+            const sPrice = item.start_from[currentLang] || item.start_from.id;
+            const sWa = item.wa_message[currentLang] || item.wa_message.id;
             
-            document.getElementById('modalTitle').textContent = item.title;
-            // Highlight problem/solution approach
-            const boldedDesc = item.description.replace('Udah 2026', '<strong class="text-white">Udah 2026</strong>').replace('Solusinya,', '<strong class="text-emerald-400">Solusinya,</strong>');
+            document.getElementById('modalTitle').textContent = sTitle;
+            
+            // Memberikan style tebal/highlight pada kata kunci tertentu, mendukung ID & EN
+            const boldedDesc = sDesc
+                .replace('Udah 2026', '<strong class="text-white">Udah 2026</strong>')
+                .replace('Solusinya,', '<strong class="text-emerald-400">Solusinya,</strong>')
+                .replace("It's 2026", '<strong class="text-white">It\'s 2026</strong>')
+                .replace('The solution:', '<strong class="text-emerald-400">The solution:</strong>');
+            
             document.getElementById('modalDesc').innerHTML = boldedDesc;
-            document.getElementById('modalPrice').textContent = item.start_from;
-            document.getElementById('modalWaBtn').href = `https://wa.me/6289681676100?text=${encodeURIComponent(item.wa_message)}`;
+            document.getElementById('modalPrice').textContent = sPrice;
+            document.getElementById('modalWaBtn').href = `https://wa.me/6289681676100?text=${encodeURIComponent(sWa)}`;
             
             document.getElementById('serviceModal').classList.remove('hidden');
         }
@@ -138,7 +223,7 @@
             document.getElementById('serviceModal').classList.add('hidden');
         }
 
-        // Close modal when clicking outside box
+        // Menutup modal jika user mengklik area luar kotak modal
         document.getElementById('serviceModal').addEventListener('click', function(e) {
             if(e.target === this) closeModal();
         });
