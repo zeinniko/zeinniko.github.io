@@ -3,54 +3,81 @@
     "name": "Wisata Merapi Jeep",
     "role": "Lead Fullstack & Mobile",
     "category": "Fullstack",
-    "desc": "Membangun sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi."
+    "desc": {
+      "id": "Membangun sistem reservasi kendaraan end-to-end (Web & Mobile) untuk manajemen armada dan transaksi.",
+      "en": "Building an end-to-end vehicle reservation system (Web & Mobile) for fleet management and transactions."
+    }
   },
   {
     "name": "Waskita & Jasaraharja",
     "role": "Maintenance Specialist",
     "category": "Maintenance",
-    "desc": "Bertanggung jawab atas pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS)."
+    "desc": {
+      "id": "Bertanggung jawab atas pemeliharaan rutin, bug fixing, dan optimasi fitur aplikasi mobile korporasi (Android & iOS).",
+      "en": "Responsible for routine maintenance, bug fixing, and feature optimization of corporate mobile applications (Android & iOS)."
+    }
   },
   {
     "name": "Tourguidein.com",
     "role": "Backend Developer",
     "category": "Backend",
-    "desc": "Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi."
+    "desc": {
+      "id": "Merancang arsitektur server dan skalabilitas API untuk platform pemesanan pemandu wisata berbasis lokasi.",
+      "en": "Designing server architecture and API scalability for a location-based tour guide booking platform."
+    }
   },
   {
     "name": "Catatin.ai",
     "role": "Fullstack Developer",
     "category": "Fullstack",
-    "desc": "Mengembangkan landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis."
+    "desc": {
+      "id": "Mengembangkan landing page responsif dan dashboard manajemen keuangan dengan visualisasi laporan otomatis.",
+      "en": "Developing a responsive landing page and financial management dashboard with automated report visualization."
+    }
   },
   {
     "name": "Sistem Broadcast WhatsApp",
     "role": "Integration Specialist",
     "category": "Integration",
-    "desc": "Mengintegrasikan WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template."
+    "desc": {
+      "id": "Mengintegrasikan WhatsApp Business API (WABA) untuk automasi pesan massal dan manajemen template.",
+      "en": "Integrating WhatsApp Business API (WABA) for mass messaging automation and template management."
+    }
   },
   {
     "name": "Noneton - Instagram Clone",
     "role": "Maintenance",
     "category": "Maintenance",
-    "desc": "Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial."
+    "desc": {
+      "id": "Mengelola pemeliharaan sistem, optimasi feed media, dan stabilitas fitur interaksi sosial.",
+      "en": "Managing system maintenance, media feed optimization, and the stability of social interaction features."
+    }
   },
   {
     "name": "Proda Indonesia",
     "role": "Mobile Developer",
     "category": "Mobile",
-    "desc": "Membangun dan melakukan deployment aplikasi Mobile Webview fungsional untuk platform Android."
+    "desc": {
+      "id": "Membangun dan melakukan deployment aplikasi Mobile Webview fungsional untuk platform Android.",
+      "en": "Building and deploying a functional Mobile Webview application for the Android platform."
+    }
   },
   {
     "name": "Aplikasi Area Polygon",
     "role": "Software Engineer",
     "category": "Fullstack",
-    "desc": "Menciptakan fitur interaktif pemilihan koordinat polygon dinamis berbasis gambar untuk pemetaan data."
+    "desc": {
+      "id": "Menciptakan fitur interaktif pemilihan koordinat polygon dinamis berbasis gambar untuk pemetaan data.",
+      "en": "Creating an interactive feature for dynamic image-based polygon coordinate selection for data mapping."
+    }
   },
   {
     "name": "Travel Umrah",
     "role": "UI/UX Designer",
     "category": "UI/UX",
-    "desc": "Merancang alur antarmuka (wireframe hingga prototype) untuk paket perjalanan dan manajemen jamaah."
+    "desc": {
+      "id": "Merancang alur antarmuka (wireframe hingga prototype) untuk paket perjalanan dan manajemen jamaah.",
+      "en": "Designing interface flows (wireframe to prototype) for travel packages and pilgrim management."
+    }
   }
 ]
