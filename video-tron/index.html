@@ -6,26 +6,25 @@
     <title>Videotron Display</title>
     
     <style>
-        /* Reset dasar agar tidak ada ruang putih di pinggir layar */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000; /* Layar hitam saat video baru loading */
-            overflow: hidden; /* Menghilangkan scrollbar atas-bawah/kiri-kanan */
+            background-color: #000; 
+            overflow: hidden; 
         }
 
-        /* Styling agar video responsif memenuhi seluruh layar (Cover) */
         #bg-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            object-fit: cover; /* Kunci utama agar video tidak gepeng */
-            z-index: -1;
-            pointer-events: none; /* Mencegah user klik kanan/pause video secara manual */
+            object-fit: cover;
+            /* z-index: -1 dihapus agar video tidak bersembunyi di belakang background */
+            z-index: 1; 
+            pointer-events: none;
         }
     </style>
 </head>
@@ -33,7 +32,6 @@
 
     <video id="bg-video" autoplay loop muted playsinline>
         <source src="https://zeinniko.github.io/video-tron/video-client.mp4" type="video/mp4">
-        Maaf, browser Anda tidak mendukung pemutaran video ini.
     </video>
 
 </body>
