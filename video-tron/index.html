@@ -21,8 +21,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            object-fit: cover;
-            /* z-index: -1 dihapus agar video tidak bersembunyi di belakang background */
+            object-fit: cover; /* Video akan proporsional dan penuh saat layar lanskap */
             z-index: 1; 
             pointer-events: none;
         }
@@ -30,9 +29,26 @@
 </head>
 <body>
 
-    <video id="bg-video" autoplay loop muted playsinline>
-        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+    <!-- Atribut "autoplay" dihapus agar bisa dikontrol oleh JavaScript -->
+    <video id="bg-video" loop muted playsinline>
+        <source src="https://zeinniko.github.io/video-tron/video-client.mp4" type="video/mp4">
     </video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("bg-video");
+            
+            // Mengecek apakah tinggi layar lebih besar dari lebarnya (Portrait / HP berdiri)
+            if (window.innerHeight > window.innerWidth) {
+                alert("Please landscape your device");
+            }
+            
+            // Memutar video setelah alert ditutup (klik OK) atau langsung diputar jika sudah lanskap
+            video.play().catch(function(error) {
+                console.log("Autoplay error:", error);
+            });
+        });
+    </script>
 
 </body>
 </html>
