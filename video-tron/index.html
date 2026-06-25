@@ -13,39 +13,78 @@
             height: 100%;
             background-color: #000; 
             overflow: hidden; 
-            /* Tambahan flexbox agar posisi video sangat presisi di tengah */
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: Arial, sans-serif; /* Font untuk teks email */
         }
 
         #bg-video {
             width: 100vw;
             height: 100vh;
-            /* Contain memastikan video mentok atas-bawah (landscape) atau kiri-kanan (portrait) */
             object-fit: contain; 
-            pointer-events: none;
+            pointer-events: none; /* Video tidak bisa di-klik manual */
+            z-index: 1;
+        }
+
+        /* Styling untuk teks email di tengah layar */
+        #email-overlay {
+            position: absolute;
+            z-index: 10; /* Berada di atas video */
+            color: #ffffff;
+            font-size: 2.5rem; /* Ukuran teks, bisa disesuaikan */
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.6); /* Background hitam transparan agar tulisan terbaca */
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: none; /* Disembunyikan dari awal */
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Responsif untuk layar HP agar teks tidak kebesaran */
+        @media (max-width: 768px) {
+            #email-overlay {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <video id="bg-video" loop muted playsinline>
-        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+        <source src="https://zeinniko.github.io/video-tron/video-client.mp4" type="video/mp4">
     </video>
+
+    <!-- Elemen link email -->
+    <a href="mailto:wxc@worxcode.io" id="email-overlay">wxc@worxcode.io</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const video = document.getElementById("bg-video");
+            const emailOverlay = document.getElementById("email-overlay");
             
-            // Mengecek apakah layar dalam mode portrait (HP berdiri)
+            // Mengecek layout layar
             if (window.innerHeight > window.innerWidth) {
                 alert("For a better experience, please switch to landscape layout");
             }
             
-            // Memutar video otomatis setelah alert ditutup
+            // Memutar video
             video.play().catch(function(error) {
                 console.log("Autoplay error:", error);
+            });
+
+            // Event listener untuk mengecek waktu putar video (berjalan terus menerus)
+            video.addEventListener("timeupdate", function() {
+                // video.currentTime membaca detik saat ini
+                if (video.currentTime >= 13 && video.currentTime <= 14) {
+                    // Tampilkan email jika waktu antara 13 dan 14 detik
+                    emailOverlay.style.display = "block";
+                } else {
+                    // Sembunyikan jika di luar waktu tersebut
+                    emailOverlay.style.display = "none";
+                }
             });
         });
     </script>
