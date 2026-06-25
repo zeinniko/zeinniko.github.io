@@ -29,13 +29,17 @@
         /* Styling untuk area klik (Invisible Hitbox) */
         #email-overlay {
             position: absolute;
-            top: 50%;
+            /* Menggeser posisi agak ke bawah karena teks email ada di baris kedua */
+            top: 56%; 
             left: 50%;
-            transform: translate(-50%, -50%); /* Memastikan posisi benar-benar di tengah */
+            transform: translate(-50%, -50%);
             z-index: 10;
-            width: 60%; /* Lebar area yang bisa diklik */
-            height: 40%; /* Tinggi area yang bisa diklik */
-            background-color: transparent; /* Dibuat tembus pandang 100% */
+            
+            /* Mengecilkan area klik agar pas dengan teks di video */
+            width: 40%; 
+            height: 8%; 
+            
+            background-color: transparent;
             display: none; 
             cursor: pointer;
         }
