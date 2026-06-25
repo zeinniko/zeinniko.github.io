@@ -16,38 +16,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
         }
 
         #bg-video {
             width: 100vw;
             height: 100vh;
             object-fit: contain; 
-            pointer-events: none; /* Video tidak bisa di-klik manual */
+            pointer-events: none; 
             z-index: 1;
         }
 
-        /* Styling untuk teks email di tengah layar */
+        /* Styling untuk area klik (Invisible Hitbox) */
         #email-overlay {
             position: absolute;
-            z-index: 10; /* Berada di atas video */
-            color: #ffffff;
-            font-size: 2.5rem; /* Ukuran teks, bisa disesuaikan */
-            text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.6); /* Background hitam transparan agar tulisan terbaca */
-            padding: 15px 30px;
-            border-radius: 8px;
-            display: none; /* Disembunyikan dari awal */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Memastikan posisi benar-benar di tengah */
+            z-index: 10;
+            width: 60%; /* Lebar area yang bisa diklik */
+            height: 40%; /* Tinggi area yang bisa diklik */
+            background-color: transparent; /* Dibuat tembus pandang 100% */
+            display: none; 
             cursor: pointer;
-            text-align: center;
-        }
-
-        /* Responsif untuk layar HP agar teks tidak kebesaran */
-        @media (max-width: 768px) {
-            #email-overlay {
-                font-size: 1.5rem;
-                padding: 10px 20px;
-            }
         }
     </style>
 </head>
@@ -57,8 +47,8 @@
         <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
     </video>
 
-    <!-- Elemen link email -->
-    <a href="mailto:wxc@worxcode.io" id="email-overlay">wxc@worxcode.io</a>
+    <!-- Elemen link email dibiarkan kosong tanpa teks -->
+    <a href="mailto:wxc@worxcode.io" id="email-overlay"></a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -75,14 +65,12 @@
                 console.log("Autoplay error:", error);
             });
 
-            // Event listener untuk mengecek waktu putar video (berjalan terus menerus)
+            // Timer deteksi detik video
             video.addEventListener("timeupdate", function() {
-                // video.currentTime membaca detik saat ini
-                if (video.currentTime >= 13 && video.currentTime <= 14) {
-                    // Tampilkan email jika waktu antara 13 dan 14 detik
+                // Diubah menjadi detik ke-12 sampai ke-14
+                if (video.currentTime >= 12 && video.currentTime <= 14) {
                     emailOverlay.style.display = "block";
                 } else {
-                    // Sembunyikan jika di luar waktu tersebut
                     emailOverlay.style.display = "none";
                 }
             });
