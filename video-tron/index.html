@@ -11,19 +11,19 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000; /* Warna hitam untuk space kosong */
+            background-color: #000; 
             overflow: hidden; 
+            /* Tambahan flexbox agar posisi video sangat presisi di tengah */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #bg-video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100vw;
             height: 100vh;
-            /* Diubah menjadi contain agar video utuh & menyesuaikan rasio aslinya */
+            /* Contain memastikan video mentok atas-bawah (landscape) atau kiri-kanan (portrait) */
             object-fit: contain; 
-            z-index: 1; 
             pointer-events: none;
         }
     </style>
@@ -40,7 +40,6 @@
             
             // Mengecek apakah layar dalam mode portrait (HP berdiri)
             if (window.innerHeight > window.innerWidth) {
-                // Alert baru sesuai permintaan klien
                 alert("For a better experience, please switch to landscape layout");
             }
             
