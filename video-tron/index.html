@@ -52,12 +52,15 @@
     </video>
 
     <!-- Elemen link email dibiarkan kosong tanpa teks -->
-    <a href="mailto:wxc@worxcode.io" id="email-overlay"></a>
+    <a href="mailto:wxc@worxcode.io" id="email-overlay">KLIK DISINI</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const video = document.getElementById("bg-video");
             const emailOverlay = document.getElementById("email-overlay");
+            
+            // Variabel penanda agar tidak pause berulang kali
+            let hasPaused = false; 
             
             // Mengecek layout layar
             if (window.innerHeight > window.innerWidth) {
@@ -71,11 +74,30 @@
 
             // Timer deteksi detik video
             video.addEventListener("timeupdate", function() {
-                // Diubah menjadi detik ke-12 sampai ke-14
+                
+                // 1. Reset penanda saat video mengulang (loop) ke detik awal
+                if (video.currentTime < 5) {
+                    hasPaused = false;
+                }
+
+                // 2. Munculkan area klik email di antara detik ke-12 sampai ke-14
                 if (video.currentTime >= 12 && video.currentTime <= 14) {
                     emailOverlay.style.display = "block";
                 } else {
                     emailOverlay.style.display = "none";
+                }
+
+                // 3. Logika Pause selama 5 detik tepat di detik ke-13
+                if (video.currentTime >= 13 && !hasPaused) {
+                    video.pause(); // Hentikan video sementara
+                    hasPaused = true; // Kunci supaya pause tidak tereksekusi berkali-kali
+
+                    // Tunggu 5 detik (5000 ms), lalu mainkan kembali
+                    setTimeout(function() {
+                        video.play().catch(function(error) {
+                            console.log("Resume play error:", error);
+                        });
+                    }, 5000);
                 }
             });
         });
