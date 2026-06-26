@@ -52,7 +52,7 @@
     </video>
 
     <!-- Elemen link email dibiarkan kosong tanpa teks -->
-    <a href="mailto:wxc@worxcode.io" id="email-overlay">KLIK DISINI</a>
+    <a href="mailto:wxc@worxcode.io" id="email-overlay">KLIK DISINI AJA</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -61,11 +61,6 @@
             
             // Variabel penanda agar tidak pause berulang kali
             let hasPaused = false; 
-            
-            // Mengecek layout layar
-            if (window.innerHeight > window.innerWidth) {
-                alert("For a better experience, please switch to landscape layout");
-            }
             
             // Memutar video
             video.play().catch(function(error) {
