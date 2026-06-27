@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videotron Display - Versi Cover</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; 
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bg-video {
+            width: 100vw;
+            height: 100vh;
+            /* VIDEO MEMENUHI LAYAR, TAPI AKAN DI-CROP / DIPOTONG KIRI-KANANNYA */
+            object-fit: cover; 
+            pointer-events: none; 
+            z-index: 1;
+        }
+
+        #email-overlay {
+            position: absolute;
+            top: 53%; 
+            left: 55%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 40%; 
+            height: 10%; 
+            background-color: transparent;
+            display: none; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="bg-video" loop muted playsinline>
+        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+    </video>
+
+    <a href="mailto:wxc@worxcode.io" id="email-overlay">KLIK DISINI AJA</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("bg-video");
+            const emailOverlay = document.getElementById("email-overlay");
+            let hasPaused = false; 
+            
+            video.play().catch(function(error) {
+                console.log("Autoplay error:", error);
+            });
+
+            video.addEventListener("timeupdate", function() {
+                if (video.currentTime < 5) {
+                    hasPaused = false;
+                }
+
+                if (video.currentTime >= 12 && video.currentTime <= 14) {
+                    emailOverlay.style.display = "block";
+                } else {
+                    emailOverlay.style.display = "none";
+                }
+
+                if (video.currentTime >= 13 && !hasPaused) {
+                    video.pause(); 
+                    hasPaused = true; 
+                    setTimeout(function() {
+                        video.play().catch(function(error) {
+                            console.log("Resume play error:", error);
+                        });
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
