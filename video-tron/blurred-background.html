@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videotron Display - Versi Blur Background</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; 
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 1. VIDEO BACKGROUND (DIBUAT BLUR & GELAP) */
+        #bg-video-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill; /* Ditarik memenuhi layar */
+            filter: blur(25px) brightness(0.4); /* Efek blur tinggi & digelapkan 60% */
+            z-index: 0; /* Posisi paling belakang */
+            pointer-events: none;
+        }
+
+        /* 2. VIDEO UTAMA (NORMAL DI DEPAN) */
+        #main-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain; /* Proporsional setinggi layar */
+            z-index: 1; /* Di atas background blur */
+            pointer-events: none;
+        }
+
+        /* 3. AREA KLIK EMAIL */
+        #email-overlay {
+            position: absolute;
+            top: 53%; 
+            left: 55%;
+            transform: translate(-50%, -50%);
+            z-index: 10; /* Paling depan */
+            width: 40%; 
+            height: 10%; 
+            background-color: transparent; /* Ubah ke rgba(255,0,0,0.5) untuk testing posisi */
+            display: none; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="bg-video-blur" loop muted playsinline>
+        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+    </video>
+
+    <video id="main-video" loop muted playsinline>
+        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+    </video>
+
+    <a href="mailto:wxc@worxcode.io" id="email-overlay">KLIK DISINI AJA</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const videoBlur = document.getElementById("bg-video-blur");
+            const videoMain = document.getElementById("main-video");
+            const emailOverlay = document.getElementById("email-overlay");
+            
+            let hasPaused = false; 
+            
+            // Memutar kedua video secara bersamaan
+            videoBlur.play().catch(e => console.log(e));
+            videoMain.play().catch(e => console.log(e));
+
+            // Jadikan video utama sebagai patokan timer
+            videoMain.addEventListener("timeupdate", function() {
+                
+                // 1. Reset penanda saat loop
+                if (videoMain.currentTime < 5) {
+                    hasPaused = false;
+                }
+
+                // 2. Munculkan area klik email
+                if (videoMain.currentTime >= 12 && videoMain.currentTime <= 14) {
+                    emailOverlay.style.display = "block";
+                } else {
+                    emailOverlay.style.display = "none";
+                }
+
+                // 3. Pause kedua video selama 5 detik di detik ke-13
+                if (videoMain.currentTime >= 13 && !hasPaused) {
+                    videoMain.pause(); 
+                    videoBlur.pause(); // Background juga di-pause agar sinkron
+                    hasPaused = true; 
+
+                    setTimeout(function() {
+                        videoMain.play().catch(e => console.log(e));
+                        videoBlur.play().catch(e => console.log(e));
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
