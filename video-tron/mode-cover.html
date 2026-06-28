@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videotron Display - Versi Cover</title>
+    <title>Videotron Display - Mode Cover & Cinematic Text</title>
     
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
         body, html {
             margin: 0;
             padding: 0;
@@ -13,73 +15,216 @@
             height: 100%;
             background-color: #000; 
             overflow: hidden; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            
+            /* PENGATURAN FONT (Sesuai Permintaan Klien) */
+            /* Default pakai Helvetica Neue (Thin/300) yang tampak apik dan premium */
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300; 
+            
+            /* PANDUAN FONT-WEIGHT HELVETICA:
+               100 = Ultra Thin
+               300 = Thin
+               400 = Regular
+               700 = Bold
+               
+               JIKA KLIEN INGIN TES FONT AMATICS, Hapus font-family di atas, lalu pakai ini:
+               font-family: 'Amatic SC', cursive;
+               font-weight: 700;
+               font-size: lebih dibesarkan karena Amatic karakternya kecil.
+            */
         }
 
         #bg-video {
+            position: absolute;
+            top: 0; left: 0;
             width: 100vw;
             height: 100vh;
-            /* VIDEO MEMENUHI LAYAR, TAPI AKAN DI-CROP / DIPOTONG KIRI-KANANNYA */
-            object-fit: cover; 
-            pointer-events: none; 
+            object-fit: cover; /* Mode Cover (Penuh, proporsional, crop pinggir) */
             z-index: 1;
+            pointer-events: none; 
         }
 
-        #email-overlay {
+        /* --- STYLING UNTUK TEKS DI ATAS VIDEO (0-15 Detik) --- */
+        .overlay-text {
             position: absolute;
-            top: 53%; 
-            left: 60%;
+            top: 50%; /* Posisi di tengah layar vertikal */
+            left: 50%; /* Posisi di tengah layar horizontal */
             transform: translate(-50%, -50%);
-            z-index: 10;
-            width: 40%; 
-            height: 15%; 
-            background-color: transparent;
-            display: none; 
+            width: 90%;
+            text-align: center;
+            color: #ffffff;
+            font-size: 3.5vw;
+            letter-spacing: 2px;
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.6); /* Efek bayangan agar teks terbaca walau video terang */
+            z-index: 5;
+            pointer-events: none; /* Tidak bisa diklik */
+            
+            /* Animasi Fade In & Fade Out (Gelap ke Terang) */
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out;
+        }
+        
+        .overlay-text.show {
+            opacity: 1; /* Terang */
+        }
+
+        /* --- STYLING UNTUK LAYAR HITAM DI AKHIR VIDEO (Ending Sequence) --- */
+        #ending-screen {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-color: #000000; /* Layar hitam penuh */
+            z-index: 20; /* Paling depan menutupi video */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            opacity: 0; 
+            pointer-events: none; /* Default tidak bisa diklik */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #ending-screen.show {
+            opacity: 1; 
+            pointer-events: auto; /* Bisa diklik saat email muncul */
+        }
+
+        .ending-part {
+            position: absolute;
+            color: #ffffff;
+            font-size: 3vw;
+            line-height: 1.5;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .ending-part.show {
+            opacity: 1;
+        }
+
+        /* Khusus link email agar rapi */
+        .email-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400; /* Sedikit lebih tebal dari teks biasa */
             cursor: pointer;
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            .overlay-text, .ending-part { font-size: 5vw; }
         }
     </style>
 </head>
 <body>
 
-    <video id="bg-video" loop muted playsinline>
-        <source src="https://zeinniko.github.io/video-tron/video.mp4" type="video/mp4">
+    <video id="bg-video" muted playsinline>
+        <source src="https://zeinniko.github.io/video-tron/video-new.mp4" type="video/mp4">
     </video>
 
-    <a href="mailto:wxc@worxcode.io" id="email-overlay">MODE COVER</a>
+    <div id="text-1" class="overlay-text">THE WAY MODERN WORK SHOULD RUN</div>
+    <div id="text-2" class="overlay-text">THE INFRASTRUCTURE FOR MODERN INTELLIGENT WORK</div>
+    <div id="text-3" class="overlay-text">SIMPLICITY, WORKABILITY, EXCELLENT</div>
+
+    <div id="ending-screen">
+        <div id="ending-part-1" class="ending-part">
+            TWO-TIME INNOVATION/EXCELLENCE<br>AWARD WINNER, ASIA PACIFIC
+        </div>
+        
+        <div id="ending-part-2" class="ending-part">
+            WORXCODE<br>
+            <a href="mailto:wxc@worxcode.io" class="email-link">WXC@WORXCODE.IO</a>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const video = document.getElementById("bg-video");
-            const emailOverlay = document.getElementById("email-overlay");
-            let hasPaused = false; 
             
-            video.play().catch(function(error) {
-                console.log("Autoplay error:", error);
-            });
+            // Elemen Teks Selama Video
+            // SILAKAN MAS UBAH ANGKA start & end DI BAWAH INI JIKA INGIN MENGGESER WAKTU MUNCULNYA (Dalam hitungan detik)
+            const videoTexts = [
+                { el: document.getElementById("text-1"), start: 1, end: 5 },
+                { el: document.getElementById("text-2"), start: 5, end: 10 },
+                { el: document.getElementById("text-3"), start: 10, end: 14.5 } // 14.5 agar sempat hilang sebelum layar hitam
+            ];
 
+            // Elemen Teks Ending
+            const endingScreen = document.getElementById("ending-screen");
+            const endPart1 = document.getElementById("ending-part-1");
+            const endPart2 = document.getElementById("ending-part-2");
+            
+            let isEndingSequence = false;
+
+            // Memulai video pertama kali
+            video.play().catch(e => console.log("Play error:", e));
+
+            // Mengecek waktu putar setiap detik berjalan
             video.addEventListener("timeupdate", function() {
-                if (video.currentTime < 5) {
-                    hasPaused = false;
-                }
+                if (isEndingSequence) return; // Jika sedang fase layar hitam, stop cek waktu
+                
+                let cTime = video.currentTime;
 
-                if (video.currentTime >= 12 && video.currentTime <= 14) {
-                    emailOverlay.style.display = "block";
-                } else {
-                    emailOverlay.style.display = "none";
-                }
+                // Memunculkan & Menghilangkan Teks Overlay Sesuai Waktu Settingan
+                videoTexts.forEach(item => {
+                    if (cTime >= item.start && cTime < item.end) {
+                        item.el.classList.add("show");
+                    } else {
+                        item.el.classList.remove("show");
+                    }
+                });
 
-                if (video.currentTime >= 13 && !hasPaused) {
-                    video.pause(); 
-                    hasPaused = true; 
-                    setTimeout(function() {
-                        video.play().catch(function(error) {
-                            console.log("Resume play error:", error);
-                        });
-                    }, 5000);
+                // Deteksi akhir video (di detik ke 14.8 untuk menghindari video berhenti mendadak tanpa event)
+                if (cTime >= 14.8) {
+                    startEndingSequence();
                 }
             });
+
+            // Backup deteksi jika event "ended" dari browser tertangkap duluan
+            video.addEventListener("ended", startEndingSequence);
+
+            // Fungsi Menjalankan Urutan Teks Layar Hitam
+            function startEndingSequence() {
+                if (isEndingSequence) return; 
+                isEndingSequence = true;
+
+                // 1. Pastikan semua teks overlay dimatikan
+                videoTexts.forEach(item => item.el.classList.remove("show"));
+
+                // 2. Munculkan Background Layar Hitam (fade in 0.5s)
+                endingScreen.classList.add("show");
+
+                // 3. Munculkan Part 1 
+                setTimeout(() => {
+                    endPart1.classList.add("show");
+                    
+                    // Hilangkan Part 1 setelah 2 detik
+                    setTimeout(() => {
+                        endPart1.classList.remove("show");
+                        
+                        // 4. Munculkan Part 2 (jeda 0.5s setelah part 1 hilang)
+                        setTimeout(() => {
+                            endPart2.classList.add("show");
+
+                            // Hilangkan Part 2 setelah 3 detik
+                            setTimeout(() => {
+                                endPart2.classList.remove("show");
+                                endingScreen.classList.remove("show"); // Buka layar hitam
+
+                                // 5. RESTART VIDEO DARI AWAL
+                                setTimeout(() => {
+                                    isEndingSequence = false;
+                                    video.currentTime = 0;
+                                    video.play();
+                                }, 500); // Tunggu layar hitam benar-benar hilang baru play
+
+                            }, 3000); // <-- Part 2 tampil selama 3 detik
+                        }, 500);
+                    }, 2000); // <-- Part 1 tampil selama 2 detik
+                }, 500);
+            }
         });
     </script>
 
