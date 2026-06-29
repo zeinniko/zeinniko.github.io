@@ -71,10 +71,7 @@
             width: 100vw; height: 100vh;
             background-color: #000000; 
             z-index: 20; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            /* Flexbox dihapus agar tidak bentrok dengan posisi absolute anaknya */
             
             opacity: 0; 
             pointer-events: none; 
@@ -88,6 +85,14 @@
 
         .ending-part {
             position: absolute;
+            /* Dibuat persis seperti overlay-text agar presisi di tengah */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: max-content;
+            max-width: 90%;
+            text-align: center;
+            
             color: #ffffff;
             font-size: 5vw; /* Ukuran font untuk Amatic di part ending */
             line-height: 1.2;
@@ -110,7 +115,7 @@
         /* Responsif untuk Mobile */
         @media (max-width: 768px) {
             .overlay-text { font-size: 8vw; padding: 10px 20px; white-space: normal; width: 85%; }
-            .ending-part { font-size: 8vw; }
+            .ending-part { font-size: 8vw; white-space: normal; width: 85%; }
         }
     </style>
 </head>
