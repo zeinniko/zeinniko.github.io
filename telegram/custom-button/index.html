@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Disney+ Auto Setup</title>
+    <!-- Telegram WebApp SDK wajib ada -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: transparent;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.1s, opacity 0.1s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+        /* Pewarnaan tombol sesuai contoh gambar */
+        .btn-green {
+            background-color: #6db664;
+        }
+        .btn-blue {
+            background-color: #4392e0;
+        }
+        .btn-red {
+            background-color: #e05353;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn btn-green" onclick="sendSelection('chpass_only')">
+        🔑 Change Password Only
+    </button>
+    
+    <button class="btn btn-blue" onclick="sendSelection('chpass_signout')">
+        🔑 Change Password + 📱 Signout All Devices
+    </button>
+    
+    <button class="btn btn-red" onclick="sendSelection('lookup_kick')">
+        📱 Lookup / Kick Device
+    </button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Buka layar WebApp penuh
+
+        function sendSelection(mode) {
+            // Mengirimkan string mode ke bot Telegram
+            tg.sendData(mode);
+            tg.close();
+        }
+    </script>
+</body>
+</html>
